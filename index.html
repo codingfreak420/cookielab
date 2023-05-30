@@ -40,11 +40,9 @@ footer{
     line-height: 3rem;
 }
 .footer-content p{
-    max-width: 500px;
-    margin: 10px auto;
-    line-height: 28px;
-    font-size: 14px;
-    color: #cfd2d6;
+  line-height: 5vh;
+    font-size: calc(2vw + 2vh + 1vmin);
+    color: var(--black);
 }
 .socials{
     list-style: none;
@@ -58,23 +56,17 @@ footer{
 }
 .socials a{
     text-decoration: none;
-    color: #fff;
-    border: 1.1px solid green;
     padding: 5px;
-
-    border-radius: 50%;
-
+  color: var(--green);
 }
 .socials a i{
-    font-size: 1.1rem;
+    font-size: calc(1.5vw + 1.5vh + .75vmin);
     width: 20px;
-
-
     transition: color .4s ease;
 
 }
 .socials a:hover i{
-    color: green;
+    color: var(--black);
 }
 
 .footer-bottom{
@@ -86,13 +78,13 @@ padding-bottom: 40px;
 }
 .footer-bottom p{
 float: left;
-    font-size: 14px;
+    font-size: calc(1vw + 1vh + .5vmin);
     word-spacing: 2px;
     text-transform: capitalize;
 }
 .footer-bottom p a{
-  color:green;
-  font-size: 16px;
+  color:var(--black);
+  font-size: calc(1.5vw + 1.5vh + .75vmin);
   text-decoration: none;
 }
 .footer-bottom span{
@@ -114,18 +106,13 @@ display: block;
 .footer-menu ul li a{
   color: #cfd2d6;
   text-decoration: none;
+  font-size: calc(1.5vw + 1.5vh + .75vmin)
 }
 .footer-menu ul li a:hover{
-  color: green;
+  color: var(--black);
 }
 
-@media (max-width:500px) {
-.footer-menu ul{
-  display: flex;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-}
+
     </style>
 
 
@@ -155,9 +142,9 @@ display: block;
         <!-- Menu -->
         <nav id="nav-bar">
             <ul class="menu">
-                <li><a class="nav-link" href="#aboutus">About Us</a></li>
-                <li><a class="nav-link" href="#services">Services</a></li>
-                <li><a class="nav-link" href="#pricing">Pricing</a></li>
+                <li><a class="nav-link" href="#aboutus" id="glitch" data-glitch="About Us">About Us</a></li>
+                <li><a class="nav-link" href="#services" id="glitch" data-glitch="Services">Services</a></li>
+                <li><a class="nav-link" href="#pricing" id="glitch" data-glitch="Pricing">Pricing</a></li>
             </ul>
         </nav>
     </header>
@@ -165,15 +152,15 @@ display: block;
     <!-- Main content -->
     <div id="aboutus"><b>
      The cookie lab is based out of South Texas. Specializing in sugar cookies and custom heat transfer appareal we are excited to help make your next event a special one.</b>
-      <form action="https://www.freecodecamp.com/email-submit" id="form">
-      <input type="email" name="email" id="email" placeholder="Join our mailing list for seasonal emails"></input><input type="submit" id="submit" ></input>
+      <form action="https://www.freecodecamp.com/email-submit" id="formemail">
+      <input type="email" name="email" id="emaillist" placeholder="Join our mailing list for seasonal emails"></input><div id="emailrelease">*By submitting your personal information you agree to receive emails from TheCookieLab containing offers and developments that we think may interest you.*</div><input type="submit" id="submit" ></input>
     </form>
     </div>  
    <div id="services">
      <h2>We work, you play!</h2>
-    <div class="outer"><video playsinline autoplay muted loop class src="https://happy.videvo.net/videvo_files/video/premium/partners0294/large_watermarked/BB_5a707910-3068-4937-aee7-1515062b0a51_preview.mp4" id="video"></video></div>
+    <div class="outer"><video playsinline autoplay muted loop class src="https://happy.videvo.net/videvo_files/video/premium/partners0294/large_watermarked/BB_5a707910-3068-4937-aee7-1515062b0a51_preview.mp4" id="video" load="lazy"></video></div>
 <br></br>
-  <div class="outer"><video playsinline autoplay muted loop class src="https://st4.depositphotos.com/36812622/38382/v/600/depositphotos_383829528-stock-video-heat-press-machine-shirt-wooden.mp4" id="video2"></video></div></div>
+  <div class="outer"><video playsinline autoplay muted loop class src="https://st4.depositphotos.com/36812622/38382/v/600/depositphotos_383829528-stock-video-heat-press-machine-shirt-wooden.mp4" id="video2" load="lazy"></video></div></div>
     <div id="pricing"><p>We are able to provide packages for any event or sporting season. Please give us an idea of what we will be working on toghether and we will get you a quote as soon as possible.</p>
       <br></br>
     <fieldset><b><i>Package Examples</b></i><fieldset id="pack"><b>*Party Pack*</b><ul class="partypack"><li>Party Themed Shirts</li><li>Party Themed Cookies</li></ul></fieldset><fieldset id="pack"><b>*Seasonal Pack*</b><ul class="seasonalpack"><li>Seasonal Party Cookies</li></ul></fieldset><fieldset id="pack"><b>*Sports Season Pack*</b>b><ul class="sportsseasonpack"><li>Team Shirts</li><li>Team Cookies</li></ul><p>(Team shirts and cookies will be themed and personalized for all players. Ideal for team banquets, parents night, etc.)</p></fieldset><fieldset id="pack"><b>*Team Shirts*</b><ul class="teampack"><li>Team Shirts with Name and Number</li><li>Home and Away options available</li></ul></fieldset><fieldset id="pack"><b>*Fan Pack*</b><ul class="fanpack"><li>Fan Shirts with Custom Name and Number</li><li>Home and Away versions</li></ul></fieldset></fieldset>
@@ -183,16 +170,16 @@ display: block;
 </div>
 <div id="popup1" class="overlay">
 	<div class="popup">
-    <h3>Quote</h3>
+    <h3>Custom Quote</h3>
     <br></br>
 		<a class="close" href="#">&times;</a>
-		<form action="https://www.freecodecamp.com/email-submit" class="content" id=quotebox><textarea placeholder="Let us know what you have in mind and we will contact you as soon as possible." rows="5"></textarea><input type="submit" value="Thank you"></input>
+		<form action="https://www.freecodecamp.com/email-submit" class="content" id=quotebox><textarea placeholder="Let us know what you have in mind and we will contact you as soon as possible." rows="5" cols="68%"></textarea><br></br><input type="submit" value="Get Quote"></input>
 		</form>
 	</div>
 </div>
   <footer>
         <div class="footer-content">
-          <a href='#' class='footerlogo'><h3><img src=''>LOGO</h3></a>
+          <a href='#' class='footerlogo'><img src='https://github.com/codingfreak420/imgs4prjcts/blob/main/science%20lab.png?raw=true' class='footerlogo'></a>
             <p>We are proud to serve our community.</p>
             <ul class="socials">
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>

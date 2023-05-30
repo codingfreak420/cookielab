@@ -33,12 +33,12 @@ ul{
     position: relative;
     top: 0;
     width: 100%;
-    height: 16vh;
+    height: 20vh;
 }
 
 /* Logo */
 header > img {
-  height: 20vh;
+  height: calc(10vw + 10vh + 5vmin);
   display: inline-block;
   margin-top: -2vh;
 }
@@ -50,9 +50,13 @@ header > img {
     position: fixed;
     background-color: var(--black);
     overflow: hidden;
-    
+    transition: max-height .5s ease-out;
+    max-height: 0;
+    font-size: calc(1.5vw + 1.5vh + .75vmin);
 }
-
+.menu {
+  margin-top:6vh;
+}
 .menu a,.menu p{
     display: block;
     padding: 30px;
@@ -64,9 +68,72 @@ header > img {
     background-color: var(--grey);
 }
 
-#nav-bar {
-    max-height: 0;
-    transition: max-height .5s ease-out;
+#glitch {
+	font: { 
+    font-size: calc(3vw + 3vh + 1.5vmin);
+		family: 'Raleway', sans-serif;
+		weight: 700;
+  }
+	text-decoration: none;
+	text-transform: uppercase;
+  position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0;
+	color: none;
+	letter-spacing: 5px;
+	
+	&:before, &:after {
+		display: block;
+		content: attr(data-glitch);
+    position: absolute;
+		text-transform: uppercase;
+		height: 100%;
+		width: 100%;
+		opacity: .8;
+	} &:after {
+		color: transparent;
+		z-index: -1;
+	} &:before {
+		color: #0ff;
+		z-index: -1;
+	}
+	&:hover {
+		&:before {
+			animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both 5
+		}
+		&:after {
+			animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse both 5
+		}
+  }
+}
+@media only screen and (max-width: 400px) {
+	.glitch {
+		font-size: 3em;
+	}
+}
+
+
+@keyframes glitch {
+	0% {
+		transform: translate(0)
+	}
+	20% {
+		transform: translate(-5px, 5px)
+	}
+	40% {
+		transform: translate(-5px, -5px)
+	}
+	60% {
+		transform: translate(5px, 5px)
+	}
+	80% {
+		transform: translate(5px, -5px)
+	}
+	to {
+		transform: translate(0)
+	}
 }
 
 /* Sub nav */
@@ -168,6 +235,7 @@ header > img {
 
     .menu li{
         float: left;
+      margin-top: 10%;
     }
 
     .menu a:hover{
@@ -189,13 +257,30 @@ header > img {
     .subnav-content a {
         color: white;
     }
+ #aboutus {
+   font-size: calc(2vw + 2vh + 1vmin);
+ }
 
 }
-
-
+@media (max-width: 768px) {
+  .footer-menu{
+  float: none; 
+    width: 100%;
+}
+  .footer-bottom p{
+float: none;
+    text-align: center;
+  }
+  .footer-menu ul{
+  display: inline-block;
+}
+  .footer-menu ul li{
+  display: inline-block;
+}
+}
 #aboutus {
   position: static;
-  margin-top: 20vh;
+  margin-top: 10vh;
   font-family: 'Poiret One', cursive;
   font-size: calc(4vw + 4vh + 2vmin);
   text-align: center;
@@ -203,6 +288,15 @@ header > img {
   margin-left: 7.5%;
 
 }
+#emaillist {
+  width: 60%;
+  font-size: calc(1vw + 1vh + .5vmin);
+  text-align: center;
+}
+#emailrelease {
+font-size: calc(1vw + 1vh + .5vmin);
+}
+
 h2 {
   text-align: center;
   margin-top: 25vh;
@@ -227,7 +321,8 @@ video {
 #pricing > p {
   font-family: 'Lobster', cursive;
   font-size: calc(2vw + 2vh + 1vmin);
-  width: 95%;
+  width: 85%;
+  margin-left: 7.5%;
   text-align: center;
 }
 
@@ -248,24 +343,26 @@ fieldset {
   border: none;
 }
 /*footer*/
-.footerlogo {color: green}
-
+.footerlogo {
+  height: calc(8vw + 8vh + 4vmin);
+}
 .box {
-  width: 40%;
   margin: 0 auto;
   background: rgba(255,255,255,0.2);
-  padding: 35px;
-  border: 2px solid #fff;
+  padding: 3%;
+  border: 2px none #fff;
   border-radius: 20px/50px;
   background-clip: padding-box;
   text-align: center;
 }
-
+.box:hover {
+  background: var(--green);
+}
 .button {
-  font-size: 1em;
-  padding: 10px;
+  font-size: calc(1.5vw + 1.5vh + .75vmin);
+  padding: 5%;
   color: #fff;
-  border: 2px solid cvar(--black);
+  border: 2px solid var(--grey);
   border-radius: 20px/50px;
   text-decoration: none;
   cursor: pointer;
@@ -301,10 +398,10 @@ fieldset {
   transition: all 5s ease-in-out;
 }
 
-.popup h2 {
+.popup h3 {
   margin-top: 0;
-  color: #333;
   font-family: Tahoma, Arial, sans-serif;
+  font-size: calc(2vw + 2vh + 1vmin);
 }
 .popup .close {
   position: absolute;
@@ -314,10 +411,10 @@ fieldset {
   font-size: 30px;
   font-weight: bold;
   text-decoration: none;
-  color: #333;
+  color: var(--black);
 }
 .popup .close:hover {
-  color: #06D85F;
+  color: var(--black);
 }
 .popup .content {
   max-height: 80%;
@@ -331,8 +428,5 @@ fieldset {
   .popup{
     width: 70%;
   }
-}
 
-#quotebox {
-  height: 25vh;
 }

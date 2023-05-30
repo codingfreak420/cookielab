@@ -13,20 +13,18 @@
     box-sizing: border-box;
 }
 body{
-    background: #fcfcfc;
     font-family: sans-serif;
 }
 footer{
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
     right: 0;
-    background: #111;
+    background: transparent;
     height: auto;
     width: 100vw;
-
     padding-top: 40px;
-    color: #fff;
+    color: black;
 }
 .footer-content{
     display: flex;
@@ -80,7 +78,7 @@ footer{
 }
 
 .footer-bottom{
-    background: #000;
+    background: transparent;
     width: 100vw;
     padding: 20px;
 padding-bottom: 40px;
@@ -139,66 +137,67 @@ display: block;
     <link rel="stylesheet" href="main.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Lobster&family=Poiret+One&display=swap" rel="stylesheet">
 </head>
 <body>
     
     <!-- Navigation bar -->
-    <header class="header">
+    <header id="header">
         <!-- Logo -->
-        <a href="#" class="logo">LR</a>
+        <img src="https://github.com/codingfreak420/imgs4prjcts/blob/main/science%20lab.png?raw=true" id="header-img" alt="header-img"/>
 
         <!-- Hamburger icon -->
         <input class="side-menu" type="checkbox" id="side-menu"/>
         <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
 
         <!-- Menu -->
-        <nav class="nav">
+        <nav id="nav-bar">
             <ul class="menu">
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Blog</a> </li>
-                <li><a href="#">About</a></li>
-                <li class="subnav">
-                    <p class="subnavbtn">Contact <i class="fa fa-caret-down"></i></p>
-                    <div class="subnav-content">
-                        <a href="#">Email</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">Phone</a>
-                    </div>
-                </li>
-                <li class="subnav">
-                    <p class="subnavbtn">Contact <i class="fa fa-caret-down"></i></p>
-                    <div class="subnav-content">
-                        <a href="#">Email</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">Phone</a>
-                    </div>
-                </li>
+                <li><a class="nav-link" href="#aboutus">About Us</a></li>
+                <li><a class="nav-link" href="#services">Services</a></li>
+                <li><a class="nav-link" href="#pricing">Pricing</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Main content -->
-    <main>
-        <article>
-            <h1>
-                Some content
-            </h1>
-            <p>
-                More Content
-            </p>
-        </article>
-
-    </main>
+    <div id="aboutus"><b>
+     The cookie lab is based out of South Texas. Specializing in sugar cookies and custom heat transfer appareal we are excited to help make your next event a special one.</b>
+      <form action="https://www.freecodecamp.com/email-submit" id="form">
+      <input type="email" name="email" id="email" placeholder="Join our mailing list for seasonal emails"></input><input type="submit" id="submit" ></input>
+    </form>
+    </div>  
+   <div id="services">
+     <h2>We work, you play!</h2>
+    <div class="outer"><video playsinline autoplay muted loop class src="https://happy.videvo.net/videvo_files/video/premium/partners0294/large_watermarked/BB_5a707910-3068-4937-aee7-1515062b0a51_preview.mp4" id="video"></video></div>
+<br></br>
+  <div class="outer"><video playsinline autoplay muted loop class src="https://st4.depositphotos.com/36812622/38382/v/600/depositphotos_383829528-stock-video-heat-press-machine-shirt-wooden.mp4" id="video2"></video></div></div>
+    <div id="pricing"><p>We are able to provide packages for any event or sporting season. Please give us an idea of what we will be working on toghether and we will get you a quote as soon as possible.</p>
+      <br></br>
+    <fieldset><b><i>Package Examples</b></i><fieldset id="pack"><b>*Party Pack*</b><ul class="partypack"><li>Party Themed Shirts</li><li>Party Themed Cookies</li></ul></fieldset><fieldset id="pack"><b>*Seasonal Pack*</b><ul class="seasonalpack"><li>Seasonal Party Cookies</li></ul></fieldset><fieldset id="pack"><b>*Sports Season Pack*</b>b><ul class="sportsseasonpack"><li>Team Shirts</li><li>Team Cookies</li></ul><p>(Team shirts and cookies will be themed and personalized for all players. Ideal for team banquets, parents night, etc.)</p></fieldset><fieldset id="pack"><b>*Team Shirts*</b><ul class="teampack"><li>Team Shirts with Name and Number</li><li>Home and Away options available</li></ul></fieldset><fieldset id="pack"><b>*Fan Pack*</b><ul class="fanpack"><li>Fan Shirts with Custom Name and Number</li><li>Home and Away versions</li></ul></fieldset></fieldset>
+      <br></br>
+<div class="box">
+  <a class="button" href="#popup1">Request A Quote</a>
+</div>
+<div id="popup1" class="overlay">
+	<div class="popup">
+    <h3>Quote</h3>
+    <br></br>
+		<a class="close" href="#">&times;</a>
+		<form action="https://www.freecodecamp.com/email-submit" class="content" id=quotebox><textarea placeholder="Let us know what you have in mind and we will contact you as soon as possible." rows="5"></textarea><input type="submit" value="Thank you"></input>
+		</form>
+	</div>
+</div>
   <footer>
         <div class="footer-content">
           <a href='#' class='footerlogo'><h3><img src=''>LOGO</h3></a>
-            <p>We are proud to serve our country and community.</p>
+            <p>We are proud to serve our community.</p>
             <ul class="socials">
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
             </ul>
         </div>
         <div class="footer-bottom">
